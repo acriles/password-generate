@@ -1,8 +1,27 @@
 import { useState } from 'react'
 import './PasswordGenerator.css'
+import Slider from "./Slider";
 
 function PasswordGenerator() {
   const [password, setPassword] = useState("P4$5W0rD!");
+
+  //Funções auxiliares para a geração de senhas
+  function getLowerCase(){
+    return String.fromCharCode( (Math.floor(Math.random() * 26) + 97) )
+  }
+
+  function getUpperCase(){
+    return String.fromCharCode( (Math.floor(Math.random() * 26) + 65) )
+  }
+
+  function getNumber(){
+    return Math.floor((Math.random()*10)).toString()
+  }
+
+  function getSymbols(){
+    const symbols= "!@#$%&*.?[]{}()"  
+    return symbols[Math.floor(Math.random()*symbols.length)]
+  }
 
   function generatePassword() {
     // Lógica para gerar uma senha
@@ -26,7 +45,9 @@ function PasswordGenerator() {
 
         <div id='box'>
 
-          <div>Caracter lenght</div>
+          <h2>Caracter Lenght</h2>
+
+          <Slider />
 
           <div id='checkboxes'>
             <input type="checkbox" name="upperCaseLetters" id="upperCaseLetters" />
@@ -36,7 +57,7 @@ function PasswordGenerator() {
             <input type="checkbox" name="numbers" id="numbers" />
             <label htmlFor="numbers">Include Numbers</label>
             <input type="checkbox" name="symbols" id="symbols" />
-            <label htmlFor="symbols">Include Symbols Letters</label>
+            <label htmlFor="symbols">Include Symbols</label>
           </div>
 
           <div id='strength'>Strength</div>

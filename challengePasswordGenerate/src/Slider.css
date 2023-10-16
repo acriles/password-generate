@@ -1,0 +1,97 @@
+/* Slider.css */
+.slider-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+  }
+  
+  .slider-label {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.4ch;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinhar à direita */
+    position: relative;
+  }
+  
+  .slider-value {
+    margin-top: 0px; 
+    margin-bottom: 1ch;
+    font-weight: 500;
+    font-size: 2.5ch;
+    text-align: right;
+    justify-content: right;
+    grid-column: 2;
+    grid-row: 1;
+    color: #a5ffae;
+  }
+  
+  .slider-wrapper {
+    grid-column: span 2;
+    grid-row: 2;
+    margin-top: 0;
+  }
+  
+  .slider-input {
+    width: 100%;
+    appearance: none;
+    height: 10px;
+    background: black;
+    outline: none;
+    transition: opacity 0.2s;
+    border-radius: 10px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 0;
+    margin-top: 0;
+  }
+  
+  .slider-input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 4;
+  }
+  
+  .slider-fill {
+    height: 10px;
+    background: #a5ffae; /* Cor verde para o preenchimento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 0 0 10px;
+    z-index: 1;
+  }
+  
+  .slider-thumb {
+    position: absolute;
+    top: -15px; /* Posição ajustada para alinhar a bola no slider */
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #a5ffae;
+    z-index: 2; 
+  }
+  
+  .slider-input:checked + .slider-thumb {
+    background: #a5ffae;
+    color: white; 
+    z-index: 3;
+  }
+  

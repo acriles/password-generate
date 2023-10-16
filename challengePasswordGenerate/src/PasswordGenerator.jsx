@@ -45,8 +45,6 @@ function PasswordGenerator() {
 
         <div id='box'>
 
-          <h2>Caracter Lenght</h2>
-
           <Slider />
 
           <div id='checkboxes'>
@@ -63,7 +61,7 @@ function PasswordGenerator() {
           <div id='strength'>Strength</div>
 
           <div id="div-generator">
-             <button id='generate' onClick={generatePassword}>Generate Password</button>
+             <button id='generate' onClick={generatePassword}>GENERATE</button>
           </div>
 
         </div>

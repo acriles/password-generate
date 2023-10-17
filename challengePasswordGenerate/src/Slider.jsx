@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import "./Slider.css";
+import React from 'react';
+import './Slider.css';
 
-function Slider() {
-  const [valor, setValor] = useState(10);
-
+function Slider({ passwordLength, setPasswordLength }) {
   const handleSliderChange = (e) => {
-    setValor(e.target.value);
+    const newValue = parseInt(e.target.value, 10);
+    setPasswordLength(newValue);
   };
 
   return (
     <div className="slider-container">
-      <label className="slider-label">Character Lenght</label>
-      <div className="slider-value">{valor}</div>
+      <label className="slider-label">Character Length</label>
+      <div className="slider-value">{passwordLength}</div>
       <div className="slider-wrapper">
         <input
           type="range"
           min="0"
           max="20"
-          value={valor}
+          value={passwordLength}
           onChange={handleSliderChange}
           className="slider-input"
         />
-        <div className="slider-fill" style={{ width: `${(valor / 20) * 95}%` }}></div>
+        <div className="slider-fill" style={{ width: `${(passwordLength / 20) * 95}%` }}></div>
       </div>
     </div>
   );
